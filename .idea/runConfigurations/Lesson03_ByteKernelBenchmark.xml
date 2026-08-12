@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lesson03 ByteKernelBenchmark" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="ir.vector.lesson03.ByteKernelBenchmark" />
+    <module name="vector-programming" />
+    <option name="VM_PARAMETERS" value="--add-modules jdk.incubator.vector" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

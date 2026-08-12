@@ -19,10 +19,12 @@ vector-programming/
 ├── pom.xml
 ├── run-lesson01.ps1
 ├── run-lesson02.ps1
+├── run-lesson03.ps1
 └── src/main/java/ir/vector/
     ├── common/Benchmark.java
     ├── lesson01/ScalarVsVectorAdd.java
-    └── lesson02/ComplexKernelBenchmark.java
+    ├── lesson02/ComplexKernelBenchmark.java
+    └── lesson03/ByteKernelBenchmark.java
 ```
 
 ## اجرای درس ۱
@@ -96,11 +98,21 @@ out    = NewtonRefine(seed, energy, poly)   // چند ده iteration
 اینجا از `mul` / `fma` / `sqrt` / `broadcast` استفاده می‌شود.  
 چون FLOP به‌ازای هر load بیشتر است، معمولاً تفاوت SIMD واضح‌تر از درس ۱ دیده می‌شود.
 
+## درس ۳ — کرنل سنگین روی byte (۸بیت)
+
+روی AVX-256 معمولاً `32` تا lane برای byte داریم (`256/8`).
+
+```powershell
+.\run-lesson03.ps1
+```
+
+در IntelliJ: **Lesson03 ByteKernelBenchmark**
+
 ## مسیر یادگیری پیشنهادی
 
 1. **Lesson 01** — Scalar vs Vector add
-2. **Lesson 02** — کرنل سنگین با `mul` / `fma` / `sqrt`
-3. Lesson 03 — mask و باقیماندهٔ آرایه
+2. **Lesson 02** — کرنل سنگین float با `mul` / `fma` / `sqrt`
+3. **Lesson 03** — کرنل سنگین byte (۸بیت)
 4. Lesson 04 — reduction (sum / max)
 5. Lesson 05 — مقایسه با HotSpot auto-vectorization
 
