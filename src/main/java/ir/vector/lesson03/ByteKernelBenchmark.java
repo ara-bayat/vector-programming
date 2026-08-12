@@ -27,7 +27,7 @@ public final class ByteKernelBenchmark {
 
     private static final VectorSpecies<Byte> SPECIES = ByteVector.SPECIES_PREFERRED;
 
-    private static final int ARRAY_SIZE = 1_048_57600; // 2^20 bytes
+    private static final int ARRAY_SIZE = 1_048_576; // 2^20 bytes
     private static final int WARMUP_ROUNDS = 3;
     private static final int MEASURE_ROUNDS = 8;
     private static final int MIX_STEPS = 64;
