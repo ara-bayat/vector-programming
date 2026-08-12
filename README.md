@@ -17,9 +17,12 @@
 ```
 vector-programming/
 ├── pom.xml
+├── run-lesson01.ps1
+├── run-lesson02.ps1
 └── src/main/java/ir/vector/
     ├── common/Benchmark.java
-    └── lesson01/ScalarVsVectorAdd.java
+    ├── lesson01/ScalarVsVectorAdd.java
+    └── lesson02/ComplexKernelBenchmark.java
 ```
 
 ## اجرای درس ۱
@@ -72,10 +75,31 @@ java --add-modules jdk.incubator.vector -cp target\classes ir.vector.lesson01.Sc
 روی CPU فعلی‌ات، `SPECIES_PREFERRED` معمولاً چند lane می‌دهد (مثلاً 8 برای AVX).  
 یعنی تقریباً ۸ جمع float در یک عملیات برداری.
 
+## درس ۲ — کرنل پیچیده‌تر
+
+فرمول هر عنصر:
+
+```text
+poly   = ((c3*x + c2)*x + c1)*x + c0
+energy = wX*x*x + wY*y*y + wZ*z*z
+seed   = sqrt(energy)*gain + poly
+out    = NewtonRefine(seed, energy, poly)   // چند ده iteration
+```
+
+```powershell
+.\run-lesson02.ps1
+```
+
+در IntelliJ: **Lesson02 ComplexKernelBenchmark**  
+(VM options همان `--add-modules jdk.incubator.vector`)
+
+اینجا از `mul` / `fma` / `sqrt` / `broadcast` استفاده می‌شود.  
+چون FLOP به‌ازای هر load بیشتر است، معمولاً تفاوت SIMD واضح‌تر از درس ۱ دیده می‌شود.
+
 ## مسیر یادگیری پیشنهادی
 
-1. **Lesson 01** — Scalar vs Vector add (همین الان)
-2. Lesson 02 — `mul` / `fma` و عملیات‌های بیشتر
+1. **Lesson 01** — Scalar vs Vector add
+2. **Lesson 02** — کرنل سنگین با `mul` / `fma` / `sqrt`
 3. Lesson 03 — mask و باقیماندهٔ آرایه
 4. Lesson 04 — reduction (sum / max)
 5. Lesson 05 — مقایسه با HotSpot auto-vectorization

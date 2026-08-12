@@ -13,7 +13,7 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <exec.mainClass>ir.vector.lesson01.ScalarVsVectorAdd</exec.mainClass>
+        <exec.mainClass>ir.vector.lesson02.ComplexKernelBenchmark</exec.mainClass>
     </properties>
 
     <build>
