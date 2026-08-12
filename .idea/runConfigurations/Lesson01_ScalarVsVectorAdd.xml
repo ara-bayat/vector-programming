@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lesson01 ScalarVsVectorAdd" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="ir.vector.lesson01.ScalarVsVectorAdd" />
+    <module name="vector-programming" />
+    <option name="VM_PARAMETERS" value="--add-modules jdk.incubator.vector" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
